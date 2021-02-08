@@ -1,6 +1,7 @@
 [![Build Status](https://circleci.com/gh/angular/clang-format.svg?style=svg)](https://circleci.com/gh/angular/clang-format)
 
 # clang-format
+
 node.js module which wraps the native clang-format executable.
 
 ## From the command-line:
@@ -22,41 +23,41 @@ We recommend using a git pre-commit hook. You can configure this as follows:
 
 1. add a `precommit` script to your package.json file:
 
-    ```js
-    "scripts": {
-        "precommit": "check-clang-format"
-    }
-    ```
+   ```js
+   "scripts": {
+       "precommit": "check-clang-format"
+   }
+   ```
 
-    By default, the user gets an error instructing them to run
-    `./node_modules/.bin/git-clang-format`. You may find it more ergonomic to set
-    up a package.json script, eg.
-    `"scripts": { "format": "git-clang-format" }`
+   By default, the user gets an error instructing them to run
+   `./node_modules/.bin/git-clang-format`. You may find it more ergonomic to set
+   up a package.json script, eg.
+   `"scripts": { "format": "git-clang-format" }`
 
-    In this case, add a second argument to the "precommit" script, giving the
-    error you'd like to print for users, eg.
+   In this case, add a second argument to the "precommit" script, giving the
+   error you'd like to print for users, eg.
 
-    `"precommit": "check-clang-format \"yarn format\""`
+   `"precommit": "check-clang-format \"yarn format\""`
 
 2. Add a devDependency on the `husky` package, which will add a
-  `.git/hooks/pre-commit` script, which in turn triggers the `precommit`
-  package.json script to run whenever someone adds a commit in this repository:
+   `.git/hooks/pre-commit` script, which in turn triggers the `precommit`
+   package.json script to run whenever someone adds a commit in this repository:
 
-    ```sh
-    $ yarn add -D husky
-    ```
+   ```sh
+   $ yarn add -D husky
+   ```
 
-    or
+   or
 
-    ```sh
-    npm install --save-dev husky
-    ```
+   ```sh
+   npm install --save-dev husky
+   ```
 
 > Why do this in a pre-commit hook? For one thing, it's faster to run
-  `clang-format` only on the changed files, especially as the repository grows.
-  Also, this lets you upgrade `clang-format` or change your settings without
-  needing to re-format the entire repository, while still enforcing that later
-  changes follow the new style.
+> `clang-format` only on the changed files, especially as the repository grows.
+> Also, this lets you upgrade `clang-format` or change your settings without
+> needing to re-format the entire repository, while still enforcing that later
+> changes follow the new style.
 
 ## Globbing files
 
@@ -86,3 +87,13 @@ Configure with:
 
 In the generated Visual Studio project, search for the `clang-format` binary in
 the Solution Explorer window, right click and choose Build.
+
+## Updating clang-format
+
+#### Mac OS
+
+Install build dependencies:
+
+    $ brew install cmake Ninja
+
+    $ ./build.sh
