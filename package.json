@@ -1,5 +1,5 @@
 {
-  "name": "clang-format",
+  "name": "@homerjam/clang-format",
   "version": "1.4.0",
   "description": "node wrapper around clang-format",
   "repository": {
