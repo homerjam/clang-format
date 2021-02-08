@@ -1,6 +1,6 @@
 {
   "name": "@homerjam/clang-format",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "node wrapper around clang-format",
   "repository": {
     "type": "git",
